@@ -22,6 +22,5 @@
       npm run build
     </PostBuildEvent>
   </PropertyGroup>
-
   
 </Project>
