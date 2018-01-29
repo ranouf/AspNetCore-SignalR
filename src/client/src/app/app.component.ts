@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
   providers: [ValuesService],
 })
 export class AppComponent implements OnInit {
+  title = "AspNetCoreSignalR";
   apiUrl: string = environment.apiUrl;
 
   //Test API
