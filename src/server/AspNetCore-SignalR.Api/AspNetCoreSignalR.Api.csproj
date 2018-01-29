@@ -18,7 +18,6 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <PostBuildEvent>
       cd "$(MSBuildProjectDirectory)/../../client"
-      npm install -g npm-fast-install
       npm-fast-install
       npm run build
     </PostBuildEvent>
