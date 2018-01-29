@@ -15,12 +15,8 @@
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
   </ItemGroup>
 
-  <PropertyGroup>
-    <PreBuildEvent>
-      cd "$(MSBuildProjectDirectory)/../../client"
-      npm install
-      npm run build
-    </PreBuildEvent>
-  </PropertyGroup>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="cd &quot;$(MSBuildProjectDirectory)/../../client&quot;&#xD;&#xA;npm install&#xD;&#xA;npm run build" />
+  </Target>
   
 </Project>
