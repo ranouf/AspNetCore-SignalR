@@ -15,7 +15,7 @@
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
   </ItemGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+  <PropertyGroup>
     <PreBuildEvent>
       cd "$(MSBuildProjectDirectory)/../../client"
       npm install
