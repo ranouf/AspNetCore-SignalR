@@ -16,11 +16,11 @@
   </ItemGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <PostBuildEvent>
+    <PreBuildEvent>
       cd "$(MSBuildProjectDirectory)/../../client"
       npm install
       npm run build
-    </PostBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   
 </Project>
