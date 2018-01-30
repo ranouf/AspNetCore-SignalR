@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="cd &quot;$(MSBuildProjectDirectory)/../../client&quot;&#xD;&#xA;npm install&#xD;&#xA;ng build --env=prod --prod --output-path=$(PublishDir)&#xD;&#xA;echo $(PublishDir)&#xD;&#xA;&#xD;&#xA;" />
+    <Exec Command="echo &quot;$(ProjectDir)..\..\client&quot;&#xD;&#xA;cd $(ProjectDir)..\..\client&#xD;&#xA;echo &quot;npm install&quot;&#xD;&#xA;npm install&#xD;&#xA;echo &quot;ng build&quot;&#xD;&#xA;ng build --env=prod --prod --output-path=$(ProjectDir)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
   </Target>
   
 </Project>
