@@ -18,8 +18,16 @@ IF NOT DEFINED DEPLOYMENT_TARGET (
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: Deployment
 :: ----------
-echo Building App in %DEPLOYMENT_TARGET%...
+echo Source: %DEPLOYMENT_SOURCE%...
+echo Deployment: in %DEPLOYMENT_TARGET%...
+
+call :ExecuteCmd dotnet publish src/server/AspNetCore-SignalR.Api/ -o %DEPLOYMENT_TARGET%
+IF !ERRORLEVEL! NEQ 0 goto error
+popd
+
+call :ExecuteCmd  cd  %DEPLOYMENT_TARGET%
 call :ExecuteCmd  dir
+
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
