@@ -36,7 +36,7 @@ call :ExecuteCmd npm install -g @angular/cli
 IF !ERRORLEVEL! NEQ 0 goto error
 
 echo Deploy client
-call :ExecuteCmd ./node_modules/.bin/ng build --env=prod --prod --output-path=%DEPLOYMENT_TARGET%
+call :ExecuteCmd ng build --env=prod --prod --output-path=%DEPLOYMENT_TARGET%
 IF !ERRORLEVEL! NEQ 0 goto error
 popd
 
