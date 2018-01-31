@@ -31,10 +31,6 @@ echo npm install --production
 call :ExecuteCmd npm install --production
 IF !ERRORLEVEL! NEQ 0 goto error
 
-::echo npm install --only=dev
-::call :ExecuteCmd npm install --only=dev
-::IF !ERRORLEVEL! NEQ 0 goto error
-
 echo Deploy client
 call :ExecuteCmd npm run build-azure
 IF !ERRORLEVEL! NEQ 0 goto error
