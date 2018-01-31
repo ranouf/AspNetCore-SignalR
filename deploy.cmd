@@ -28,6 +28,10 @@ echo npm install --production
 call :ExecuteCmd npm install --production
 IF !ERRORLEVEL! NEQ 0 goto error
 
+echo npm install --only=dev
+call :ExecuteCmd npm install --only=dev
+IF !ERRORLEVEL! NEQ 0 goto error
+
 echo npm install @angular/cli
 call :ExecuteCmd npm install -g @angular/cli
 IF !ERRORLEVEL! NEQ 0 goto error
