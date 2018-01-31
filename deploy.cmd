@@ -27,7 +27,7 @@ call :ExecuteCmd dotnet publish src\server\AspNetCore-SignalR.Api\ -o %DEPLOYMEN
 IF !ERRORLEVEL! NEQ 0 goto error
 
 echo Cd %DEPLOYMENT_SOURCE%\src\client
-call :ExecuteCmd  push  %DEPLOYMENT_SOURCE%\src\client
+call :ExecuteCmd  pushd  %DEPLOYMENT_SOURCE%\src\client
 call :ExecuteCmd  dir
 
 echo Npm install
