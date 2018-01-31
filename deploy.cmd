@@ -31,6 +31,10 @@ echo Npm install
 call :ExecuteCmd npm install --production
 IF !ERRORLEVEL! NEQ 0 goto error
 
+echo Install @angular/cli
+call :ExecuteCmd npm install -g @angular/cli
+IF !ERRORLEVEL! NEQ 0 goto error
+
 echo Deploy client
 call :ExecuteCmd ng build --env=prod --prod --output-path=%DEPLOYMENT_TARGET%
 IF !ERRORLEVEL! NEQ 0 goto error
