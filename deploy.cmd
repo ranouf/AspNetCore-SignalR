@@ -21,14 +21,24 @@ IF NOT DEFINED DEPLOYMENT_TARGET (
 echo Source: %DEPLOYMENT_SOURCE%...
 echo Deployment: in %DEPLOYMENT_TARGET%...
 
-call :ExecuteCmd dotnet publish src/server/AspNetCore-SignalR.Api/ -o %DEPLOYMENT_TARGET%
+echo Deploy AspNetCore-SignalR.Api
+call :ExecuteCmd dotnet publish src\server\AspNetCore-SignalR.Api\ -o %DEPLOYMENT_TARGET%
 IF !ERRORLEVEL! NEQ 0 goto error
 popd
 
-call :ExecuteCmd  cd  %DEPLOYMENT_TARGET%
+echo Cd client
+call :ExecuteCmd  cd  %DEPLOYMENT_SOURCE%\src\client
 call :ExecuteCmd  dir
 
+echo Npm install
+call :ExecuteCmd npm install --production
+IF !ERRORLEVEL! NEQ 0 goto error
+popd
 
+echo Ng build
+call :ExecuteCmd ng build --env=prod --prod --output-path=%DEPLOYMENT_TARGET%
+IF !ERRORLEVEL! NEQ 0 goto error
+popd
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: End

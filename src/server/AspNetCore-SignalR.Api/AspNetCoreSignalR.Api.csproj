@@ -14,10 +14,11 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
   </ItemGroup>
-  
-  <PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <PreBuildEvent>
-      echo "$(ProjectDir)..\..\client"
+      cd "$(MSBuildProjectDirectory)/../../client"
+      npm run build
     </PreBuildEvent>
   </PropertyGroup>
   
