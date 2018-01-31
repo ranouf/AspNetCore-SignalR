@@ -31,12 +31,12 @@ echo npm install --production
 call :ExecuteCmd npm install --production
 IF !ERRORLEVEL! NEQ 0 goto error
 
-echo npm install --only=dev
-call :ExecuteCmd npm install --only=dev
-IF !ERRORLEVEL! NEQ 0 goto error
+::echo npm install --only=dev
+::call :ExecuteCmd npm install --only=dev
+::IF !ERRORLEVEL! NEQ 0 goto error
 
 echo Deploy client
-call node_modules/.bin/ng build --env=prod --prod --output-path=%DEPLOYMENT_TARGET%
+call :ExecuteCmd npm run build-azure
 IF !ERRORLEVEL! NEQ 0 goto error
 popd
 
