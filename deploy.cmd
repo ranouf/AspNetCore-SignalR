@@ -32,7 +32,7 @@ call :ExecuteCmd npm install --production
 IF !ERRORLEVEL! NEQ 0 goto error
 
 echo Deploy client
-call node_modules/.bin/ng build --env=prod --prod --output-path=%DEPLOYMENT_TARGET%
+eval ./node_modules/.bin/ng build --env=prod --prod --output-path=%DEPLOYMENT_TARGET%
 IF !ERRORLEVEL! NEQ 0 goto error
 popd
 
