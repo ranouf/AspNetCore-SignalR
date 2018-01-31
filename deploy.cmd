@@ -28,14 +28,14 @@ IF !ERRORLEVEL! NEQ 0 goto error
 
 echo Cd %DEPLOYMENT_SOURCE%\src\client
 call :ExecuteCmd  pushd  %DEPLOYMENT_SOURCE%\src\client
-call :ExecuteCmd  dir
+call :ExecuteCmd  dir %DEPLOYMENT_SOURCE%\src\client
 
 echo Npm install
-call :ExecuteCmd npm install --production
+call :ExecuteCmd %DEPLOYMENT_SOURCE%\src\client\npm install --production
 IF !ERRORLEVEL! NEQ 0 goto error
 
 echo Ng build
-call :ExecuteCmd ng build --env=prod --prod --output-path=%DEPLOYMENT_TARGET%
+call :ExecuteCmd %DEPLOYMENT_SOURCE%\src\client\ng build --env=prod --prod --output-path=%DEPLOYMENT_TARGET%
 IF !ERRORLEVEL! NEQ 0 goto error
 popd
 
