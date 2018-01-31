@@ -27,15 +27,18 @@ call :ExecuteCmd dotnet publish src\server\AspNetCore-SignalR.Api\ -o %DEPLOYMEN
 IF !ERRORLEVEL! NEQ 0 goto error
 
 echo Cd %DEPLOYMENT_SOURCE%\src\client
-call :ExecuteCmd  pushd  %DEPLOYMENT_SOURCE%\src\client
-call :ExecuteCmd  dir %DEPLOYMENT_SOURCE%\src\client
+call :ExecuteCmd  cd  "%DEPLOYMENT_SOURCE%\src\client"
+IF !ERRORLEVEL! NEQ 0 goto error
+
+call :ExecuteCmd  dir
+IF !ERRORLEVEL! NEQ 0 goto error
 
 echo Npm install
-call :ExecuteCmd %DEPLOYMENT_SOURCE%\src\client\npm install --production
+call :ExecuteCmd npm install --production
 IF !ERRORLEVEL! NEQ 0 goto error
 
 echo Ng build
-call :ExecuteCmd %DEPLOYMENT_SOURCE%\src\client\ng build --env=prod --prod --output-path=%DEPLOYMENT_TARGET%
+call :ExecuteCmd ng build --env=prod --prod --output-path=%DEPLOYMENT_TARGET%
 IF !ERRORLEVEL! NEQ 0 goto error
 popd
 
