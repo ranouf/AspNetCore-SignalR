@@ -22,10 +22,6 @@ echo Deployment: in %DEPLOYMENT_TARGET%...
 echo Server off
 touch %DEPLOYMENT_TARGET%\App_Offline.htm
 
-echo Deploy API
-call :ExecuteCmd dotnet publish src\server\AspNetCore-SignalR.Api\ -o %DEPLOYMENT_TARGET%
-IF !ERRORLEVEL! NEQ 0 goto error
-
 pushd "%DEPLOYMENT_SOURCE%\src\client"
 echo npm install --production
 call :ExecuteCmd npm install --production
@@ -36,8 +32,9 @@ call :ExecuteCmd npm run build-azure
 IF !ERRORLEVEL! NEQ 0 goto error
 popd
 
-echo Server on
-rm %DEPLOYMENT_TARGET%\App_Offline.htm
+echo Deploy API
+call :ExecuteCmd dotnet publish src\server\AspNetCore-SignalR.Api\ -o %DEPLOYMENT_TARGET%
+IF !ERRORLEVEL! NEQ 0 goto error
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: End
