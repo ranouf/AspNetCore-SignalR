@@ -21,6 +21,9 @@ IF NOT DEFINED DEPLOYMENT_TARGET (
 echo Source: %DEPLOYMENT_SOURCE%...
 echo Deployment: in %DEPLOYMENT_TARGET%...
 
+echo Server off
+touch %DEPLOYMENT_TARGET%\App_Offline.htm
+
 echo Deploy AspNetCore-SignalR.Api
 call :ExecuteCmd dotnet publish src\server\AspNetCore-SignalR.Api\ -o %DEPLOYMENT_TARGET%
 IF !ERRORLEVEL! NEQ 0 goto error
@@ -39,6 +42,11 @@ echo Ng build
 call :ExecuteCmd ng build --env=prod --prod --output-path=%DEPLOYMENT_TARGET%
 IF !ERRORLEVEL! NEQ 0 goto error
 popd
+
+
+echo Server on
+rm %DEPLOYMENT_TARGET%\App_Offline.htm
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: End
