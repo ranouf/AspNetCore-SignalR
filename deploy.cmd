@@ -27,12 +27,16 @@ call :ExecuteCmd dotnet publish src\server\AspNetCore-SignalR.Api\ -o %DEPLOYMEN
 IF !ERRORLEVEL! NEQ 0 goto error
 
 pushd "%DEPLOYMENT_SOURCE%\src\client"
-echo Npm install
+echo npm install --production
 call :ExecuteCmd npm install --production
 IF !ERRORLEVEL! NEQ 0 goto error
 
+echo npm install --only=dev
+call :ExecuteCmd npm install --only=dev
+IF !ERRORLEVEL! NEQ 0 goto error
+
 echo Deploy client
-eval ./node_modules/.bin/ng build --env=prod --prod --output-path=%DEPLOYMENT_TARGET%
+call node_modules/.bin/ng build --env=prod --prod --output-path=%DEPLOYMENT_TARGET%
 IF !ERRORLEVEL! NEQ 0 goto error
 popd
 
