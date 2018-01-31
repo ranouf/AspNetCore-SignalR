@@ -22,22 +22,16 @@ echo Deployment: in %DEPLOYMENT_TARGET%...
 echo Server off
 touch %DEPLOYMENT_TARGET%\App_Offline.htm
 
-echo Deploy AspNetCore-SignalR.Api
+echo Deploy API
 call :ExecuteCmd dotnet publish src\server\AspNetCore-SignalR.Api\ -o %DEPLOYMENT_TARGET%
 IF !ERRORLEVEL! NEQ 0 goto error
 
-echo Cd %DEPLOYMENT_SOURCE%\src\client
-call :ExecuteCmd  cd  "%DEPLOYMENT_SOURCE%\src\client"
-IF !ERRORLEVEL! NEQ 0 goto error
-
-call :ExecuteCmd  dir
-IF !ERRORLEVEL! NEQ 0 goto error
-
+pushd "%DEPLOYMENT_SOURCE%\src\client"
 echo Npm install
 call :ExecuteCmd npm install --production
 IF !ERRORLEVEL! NEQ 0 goto error
 
-echo Ng build
+echo Deploy client
 call :ExecuteCmd ng build --env=prod --prod --output-path=%DEPLOYMENT_TARGET%
 IF !ERRORLEVEL! NEQ 0 goto error
 popd
