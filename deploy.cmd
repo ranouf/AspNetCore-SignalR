@@ -5,10 +5,8 @@
 :: -----
 setlocal enabledelayedexpansion
 
-SET ARTIFACTS=%~dp0%..\artifacts
-
 IF NOT DEFINED DEPLOYMENT_SOURCE (
-  SET DEPLOYMENT_SOURCE=%~dp0%.
+  SET DEPLOYMENT_SOURCE=%ARTIFACTS%\repository
 )
 
 IF NOT DEFINED DEPLOYMENT_TARGET (
@@ -29,7 +27,7 @@ call :ExecuteCmd dotnet publish src\server\AspNetCore-SignalR.Api\ -o %DEPLOYMEN
 IF !ERRORLEVEL! NEQ 0 goto error
 popd
 
-echo Cd client
+echo Cd %DEPLOYMENT_SOURCE%\src\client
 call :ExecuteCmd  cd  %DEPLOYMENT_SOURCE%\src\client
 call :ExecuteCmd  dir
 
