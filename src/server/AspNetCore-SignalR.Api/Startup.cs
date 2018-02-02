@@ -63,6 +63,7 @@ namespace AspNetCoreSignalR.Api
 
             app.UseSwaggerUi(typeof(Startup).GetTypeInfo().Assembly, new SwaggerUiSettings());
 
+
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
