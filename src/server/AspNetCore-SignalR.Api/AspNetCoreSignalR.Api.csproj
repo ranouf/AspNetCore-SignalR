@@ -25,7 +25,7 @@
            echo cd
            cd "$(MSBuildProjectDirectory)/../../client"
            echo install prod
-           npm install --production
+           npm install --production --verbose
            echo install dev
            npm install --only=dev
            echo build
