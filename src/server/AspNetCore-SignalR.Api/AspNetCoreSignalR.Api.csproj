@@ -25,7 +25,6 @@
            echo Build Angular App
            echo "$(MSBuildProjectDirectory)/../../client"
            cd "$(MSBuildProjectDirectory)/../../client"
-           dir
            npm install
            npm run build-azure
            echo "Angular App built"
