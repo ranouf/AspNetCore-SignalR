@@ -25,10 +25,6 @@
            echo Build Angular App
            echo cd
            cd "$(MSBuildProjectDirectory)/../../client"
-           echo install prod
-           npm install --production --verbose
-           echo install dev
-           npm install --only=dev
            echo build
            npm run build-azure
            echo "Angular App built"
