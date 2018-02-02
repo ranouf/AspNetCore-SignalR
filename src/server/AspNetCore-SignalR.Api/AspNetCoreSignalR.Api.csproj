@@ -10,6 +10,7 @@
     <PackageReference Include="NSwag.AspNetCore" Version="11.13.1" />
   </ItemGroup>
 
+  
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
@@ -24,9 +25,10 @@
            echo Build Angular App
            echo cd
            cd "$(MSBuildProjectDirectory)/../../client"
-           echo npm install
-           npm install
-           
+           echo install prod
+           npm install --production --verbose
+           echo install dev
+           npm install --only=dev
            echo build
            npm run build-azure
            echo "Angular App built"
