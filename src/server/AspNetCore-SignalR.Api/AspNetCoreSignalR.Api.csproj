@@ -27,6 +27,7 @@
            cd "$(MSBuildProjectDirectory)/../../client"
            echo install prod
            npm install --production
+           if "%ERRORLEVEL%" NEQ "0" echo Failed exitCode=%ERRORLEVEL%, command=%_CMD_%
            echo install dev
            npm install --only=dev
            echo build
