@@ -26,6 +26,7 @@
            cd "$(MSBuildProjectDirectory)/../../client"
            echo npm install
            npm install
+           
            echo build
            npm run build-azure
            echo "Angular App built"
