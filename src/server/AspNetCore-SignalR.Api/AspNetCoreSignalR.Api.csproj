@@ -21,17 +21,21 @@
 
        <PropertyGroup Condition="'$(Configuration)' == 'Release'">
          <PreBuildEvent>
+           echo "Build Angular App"
            cd "$(MSBuildProjectDirectory)/../../client"
            npm install --production
            npm install --only=dev
            npm run build-azure
+           echo "Angular App built"
          </PreBuildEvent>
        </PropertyGroup>
       
        <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
          <PreBuildEvent>
+           echo "Build Angular App"
            cd "$(MSBuildProjectDirectory)/../../client"
            npm run build
+           echo "Angular App built"
          </PreBuildEvent>
        </PropertyGroup>
   
