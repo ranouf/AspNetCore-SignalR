@@ -19,18 +19,20 @@
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
-  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
-    <PreBuildEvent>
-      cd "$(MSBuildProjectDirectory)/../../client"
-      npm run build-azure
-    </PreBuildEvent>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
-    <PreBuildEvent>
-      cd "$(MSBuildProjectDirectory)/../../client"
-      npm run build
-    </PreBuildEvent>
-  </PropertyGroup>
+       <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+         <PreBuildEvent>
+           cd "$(MSBuildProjectDirectory)/../../client"
+           npm install --production
+           npm install --only=dev
+           npm run build-azure
+         </PreBuildEvent>
+       </PropertyGroup>
+      
+       <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+         <PreBuildEvent>
+           cd "$(MSBuildProjectDirectory)/../../client"
+           npm run build
+         </PreBuildEvent>
+       </PropertyGroup>
   
 </Project>
