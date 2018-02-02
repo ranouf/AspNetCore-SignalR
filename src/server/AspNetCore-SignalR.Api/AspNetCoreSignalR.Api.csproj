@@ -22,6 +22,13 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <PreBuildEvent>
       cd "$(MSBuildProjectDirectory)/../../client"
+      npm run build-azure
+    </PreBuildEvent>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <PreBuildEvent>
+      cd "$(MSBuildProjectDirectory)/../../client"
       npm run build
     </PreBuildEvent>
   </PropertyGroup>
