@@ -21,12 +21,15 @@
   </ItemGroup>
 
        <PropertyGroup Condition="'$(Configuration)' == 'Release'">
-         <PostBuildEvent>
+         <PreBuildEvent>
            cd "D:/home/site/wwwroot/"
            rmdir /s /q wwwroot
            mkdir wwwroot
            cd "$(MSBuildProjectDirectory)/../../client"
            npm install
+         </PreBuildEvent>
+         <PostBuildEvent>
+           cd "$(MSBuildProjectDirectory)/../../client"
            npm run build-azure
          </PostBuildEvent>
        </PropertyGroup>
