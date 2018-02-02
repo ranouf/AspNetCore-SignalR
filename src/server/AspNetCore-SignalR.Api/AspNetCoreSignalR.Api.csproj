@@ -22,21 +22,16 @@
 
        <PropertyGroup Condition="'$(Configuration)' == 'Release'">
          <PostBuildEvent>
-           echo Build Angular App
-           echo "$(MSBuildProjectDirectory)/../../client"
            cd "$(MSBuildProjectDirectory)/../../client"
            npm install
            npm run build-azure
-           echo "Angular App built"
          </PostBuildEvent>
        </PropertyGroup>
       
        <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
          <PostBuildEvent>
-           echo "Build Angular App"
            cd "$(MSBuildProjectDirectory)/../../client"
            npm run build
-           echo "Angular App built"
          </PostBuildEvent>
        </PropertyGroup>
   

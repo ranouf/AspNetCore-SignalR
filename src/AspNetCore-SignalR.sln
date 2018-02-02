@@ -30,11 +30,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "client", "client\", "{AC235
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EA33BC39-5128-414C-812D-4AAF56D20919}"
 	ProjectSection(SolutionItems) = preProject
-		..\.deployment.old = ..\.deployment.old
 		..\.gitignore = ..\.gitignore
 		api.config.nswag = api.config.nswag
-		..\deploy.cmd.old = ..\deploy.cmd.old
-		..\deploy.cmd.old2 = ..\deploy.cmd.old2
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "server", "server", "{58950103-58AF-426F-B62F-BFDF33DB2082}"
