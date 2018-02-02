@@ -23,7 +23,7 @@
        <PropertyGroup Condition="'$(Configuration)' == 'Release'">
          <PreBuildEvent>
            echo Build Angular App
-           echo cd
+           echo "$(MSBuildProjectDirectory)/../../client"
            cd "$(MSBuildProjectDirectory)/../../client"
            echo install prod
            npm install --production
