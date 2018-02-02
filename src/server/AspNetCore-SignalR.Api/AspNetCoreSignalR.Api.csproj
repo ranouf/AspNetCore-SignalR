@@ -25,12 +25,8 @@
            echo Build Angular App
            echo "$(MSBuildProjectDirectory)/../../client"
            cd "$(MSBuildProjectDirectory)/../../client"
-           echo install prod
-           npm install --production
-           if "%ERRORLEVEL%" NEQ "0" echo Failed exitCode=%ERRORLEVEL%, command=%_CMD_%
-           echo install dev
-           npm install --only=dev
-           echo build
+           dir
+           npm install
            npm run build-azure
            echo "Angular App built"
          </PreBuildEvent>
