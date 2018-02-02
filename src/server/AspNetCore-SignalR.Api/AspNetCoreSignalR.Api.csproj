@@ -28,11 +28,11 @@
          </PostBuildEvent>
        </PropertyGroup>
       
-       <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+       <!--<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
          <PostBuildEvent>
            cd "$(MSBuildProjectDirectory)/../../client"
            npm run build
          </PostBuildEvent>
-       </PropertyGroup>
+       </PropertyGroup>-->
   
 </Project>
