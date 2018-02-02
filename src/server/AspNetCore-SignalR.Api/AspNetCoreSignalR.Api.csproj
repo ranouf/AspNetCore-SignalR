@@ -22,8 +22,7 @@
 
        <PropertyGroup Condition="'$(Configuration)' == 'Release'">
          <PostBuildEvent>
-           cd "D:/home/site/wwwroot/"
-           mkdir wwwroot 2&gt;/dev/null
+           New-Item -ItemType "directory" -Path "D:/home/site/wwwroot/wwwroot/" -Force
            cd "$(MSBuildProjectDirectory)/../../client"
            npm install
            npm run build-azure
