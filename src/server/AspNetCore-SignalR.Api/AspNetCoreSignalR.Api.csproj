@@ -22,7 +22,6 @@
 
     <PropertyGroup Condition="'$(Configuration)' == 'Release'">
       <PreBuildEvent>
-
         cd "$(MSBuildProjectDirectory)/../../client"
         npm install
       </PreBuildEvent>

@@ -5,8 +5,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.config.json",
-    "build": "ng build --env=prod --prod --aot --output-path=../server/AspNetCore-SignalR.Api/wwwroot/",
-    "build-azure": "ng build --env=prod --prod --aot --output-path=D:/home/site/wwwroot/wwwroot/",
+    "build": "ng build --output-path=../server/AspNetCore-SignalR.Api/wwwroot/",
+    "build-azure": "ng build --env=prod --prod --aot --output-path=D:/home/site/wwwroot/wwwroot/", 
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
