@@ -18,12 +18,13 @@
   <h1>Send some basic messages</h1>
 
   <div class="row">
-    <form class="form-inline" (ngSubmit)="sendMessage()" #messageForm="ngForm">
+    <form class="form-inline" (ngSubmit)="submit()" #messageForm="ngForm">
       <div class="form-group">
         <label class="sr-only" for="message">Message</label>
         <input type="text" class="form-control" id="message" placeholder="your message..." name="message" [(ngModel)]="message" required>
+        <input type="text" class="form-control" id="connectionId" placeholder="connection Id" name="message" [(ngModel)]="connectionId">
       </div>
-      <button type="submit" class="btn btn-primary" [disabled]="!messageForm.valid">Send SignalR Message</button>
+      <button type="submit" class="btn btn-primary" [disabled]="!messageForm.valid">Submit</button>
     </form>
   </div>
   <div class="row" *ngIf="messages.length > 0">

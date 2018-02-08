@@ -20,7 +20,8 @@ export class AppComponent implements OnInit {
   //Test SignalR
   private _hubConnection: HubConnection;
   public async: any;
-  message = '';
+  message = null;
+  connectionId:string;
   messages: string[] = [];
 
   constructor(
@@ -29,10 +30,27 @@ export class AppComponent implements OnInit {
     console.log(this.apiUrl);
   }
 
+  public submit(): void {
+    if (!this.connectionId || this.connectionId.length == 0) {
+      console.log('call Send');
+      this.sendMessage();
+    } else {
+      console.log('call SendToId');
+      this.sendMessageToId();
+    }
+  }
+
   public sendMessage(): void {
     const data = `Sent: ${this.message}`;
 
     this._hubConnection.invoke('Send', data);
+    this.messages.push(data);
+  }
+
+  public sendMessageToId(): void {
+    const data = `SentToId: ${this.message}`;
+
+    this._hubConnection.invoke('SendToId', data, this.connectionId);
     this.messages.push(data);
   }
 
@@ -49,6 +67,10 @@ export class AppComponent implements OnInit {
     this._hubConnection = new HubConnection(this.apiUrl + 'test');
 
     this._hubConnection.on('Send', (data: any) => {
+      const received = `Received: ${data}`;
+      this.messages.push(received);
+    });
+    this._hubConnection.on('SendToId', (data: any) => {
       const received = `Received: ${data}`;
       this.messages.push(received);
     });
