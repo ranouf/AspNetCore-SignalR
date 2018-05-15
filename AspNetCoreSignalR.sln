@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{335538C8-D14B-4B60-B4C6-771240E68144}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EA33BC39-5128-414C-812D-4AAF56D20919}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		api.config.nswag = api.config.nswag
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "server", "server", "{58950103-58AF-426F-B62F-BFDF33DB2082}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreSignalR.Api", "src\server\AspNetCoreSignalR.Api\AspNetCoreSignalR.Api.csproj", "{D987EE59-97B8-4522-A7BD-35139B99F22D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreSignalR.Core", "src\server\AspNetCoreSignalR.Core\AspNetCoreSignalR.Core.csproj", "{3AB6FB97-A5A1-43FD-8CEA-F852F01E8E44}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreSignalR.Infrastructure", "src\server\AspNetCoreSignalR.Infrastructure\AspNetCoreSignalR.Infrastructure.csproj", "{228C0D4E-D5D8-45DA-95D6-638BC697FB2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{B59A44B3-331E-439C-A214-1E5521EA8DE7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreSignalR.Common", "src\common\AspNetCoreSignalR.Common\AspNetCoreSignalR.Common.csproj", "{D9B6960E-2766-4639-8802-D92E9F1CF676}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "client", "src\client\", "{5E9607DB-8E97-420C-B0D7-BFBE379CBA39}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_23315"
+		Debug.AspNetCompiler.PhysicalPath = "src\client\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_23315\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_23315"
+		Release.AspNetCompiler.PhysicalPath = "src\client\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_23315\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "23315"
+		SlnRelativePath = "src\client\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D987EE59-97B8-4522-A7BD-35139B99F22D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D987EE59-97B8-4522-A7BD-35139B99F22D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D987EE59-97B8-4522-A7BD-35139B99F22D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D987EE59-97B8-4522-A7BD-35139B99F22D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AB6FB97-A5A1-43FD-8CEA-F852F01E8E44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AB6FB97-A5A1-43FD-8CEA-F852F01E8E44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AB6FB97-A5A1-43FD-8CEA-F852F01E8E44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AB6FB97-A5A1-43FD-8CEA-F852F01E8E44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{228C0D4E-D5D8-45DA-95D6-638BC697FB2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{228C0D4E-D5D8-45DA-95D6-638BC697FB2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{228C0D4E-D5D8-45DA-95D6-638BC697FB2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{228C0D4E-D5D8-45DA-95D6-638BC697FB2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9B6960E-2766-4639-8802-D92E9F1CF676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9B6960E-2766-4639-8802-D92E9F1CF676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9B6960E-2766-4639-8802-D92E9F1CF676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9B6960E-2766-4639-8802-D92E9F1CF676}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E9607DB-8E97-420C-B0D7-BFBE379CBA39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E9607DB-8E97-420C-B0D7-BFBE379CBA39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E9607DB-8E97-420C-B0D7-BFBE379CBA39}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E9607DB-8E97-420C-B0D7-BFBE379CBA39}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{58950103-58AF-426F-B62F-BFDF33DB2082} = {335538C8-D14B-4B60-B4C6-771240E68144}
+		{D987EE59-97B8-4522-A7BD-35139B99F22D} = {58950103-58AF-426F-B62F-BFDF33DB2082}
+		{3AB6FB97-A5A1-43FD-8CEA-F852F01E8E44} = {58950103-58AF-426F-B62F-BFDF33DB2082}
+		{228C0D4E-D5D8-45DA-95D6-638BC697FB2E} = {58950103-58AF-426F-B62F-BFDF33DB2082}
+		{B59A44B3-331E-439C-A214-1E5521EA8DE7} = {335538C8-D14B-4B60-B4C6-771240E68144}
+		{D9B6960E-2766-4639-8802-D92E9F1CF676} = {B59A44B3-331E-439C-A214-1E5521EA8DE7}
+		{5E9607DB-8E97-420C-B0D7-BFBE379CBA39} = {335538C8-D14B-4B60-B4C6-771240E68144}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {482A667C-951B-454A-9D3E-F0C8F21E9EE2}
+	EndGlobalSection
+EndGlobal

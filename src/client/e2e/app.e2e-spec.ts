@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('client App', () => {
+describe('asp-net-core-signal-rclient App', () => {
   let page: AppPage;
 
   beforeEach(() => {

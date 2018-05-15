@@ -17,14 +17,14 @@
       "addMissingPathParameters": false,
       "ignoreObsoleteProperties": false,
       "allowReferencesWithProperties": false,
+      "excludedTypeNames": [],
       "output": null,
       "assemblyPaths": [
-        "server/AspNetCore-SignalR.Api/bin/Debug/netcoreapp2.0/AspNetCore-SignalR.Api.dll"
+        "src/server/AspNetCoreSignalR.Api/bin/Debug/netcoreapp2.0/AspNetCoreSignalR.Api.dll"
       ],
       "referencePaths": [
-        "C:/Program Files/dotnet/shared/Microsoft.NETCore.App/2.0.0",
-        "server/AspNetCore-SignalR.Api/bin/Release/PublishOutput",
-        "../../../../../../.nuget/packages"
+        "C:/Program Files/dotnet/shared/Microsoft.NETCore.App/2.0.5",
+        "src/server/AspNetCoreSignalR.Api/bin/Release/PublishOutput"
       ]
     }
   },
